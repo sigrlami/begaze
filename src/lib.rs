@@ -18,3 +18,6 @@ fn pub stopManager() {
 
 
 }
+
+
+extern crate self as begaze;

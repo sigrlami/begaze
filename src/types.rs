@@ -1,19 +1,20 @@
 use std::time;
 
 
+// Standard config
 //
-//
-#[derive(Debug)]
-struct Config {
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug)]
+pub struct Config {
     debounce: i32, // default, no debounce, <specific time>
     pollInterval: i32,
     usePolling: bool,
     threadPerEvent: bool
 }
 
-// Basic structure describing filesystem even information
+// Basic structure describing filesystem event information
 //
-struct EventInfo {
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug)]
+pub struct EventInfo {
     path: String,
     time: SystemTime,
     isDirectory: bool,
@@ -23,7 +24,7 @@ struct EventInfo {
 // Specific file event reported by a file watcher. Each event contains
 // specific information defined in EventInfo
 #[derive(Debug)]
-enum Event {
+pub enum Event {
     Added(EventInfo),
     Modified(EventInfo),
     Removed(EventInfo),
