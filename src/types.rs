@@ -1,10 +1,19 @@
-use std::time;
+
+use std::time::{SystemTime};
+
+//
+
+#[derive( PartialEq, Eq, PartialOrd, Ord, Debug)]
+pub struct WatchManager {
+    pub config: WatchConfig,
+    pub listener: u32
+}
 
 
 // Standard config
 //
-#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug)]
-pub struct Config {
+#[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]
+pub struct WatchConfig {
     debounce: i32, // default, no debounce, <specific time>
     pollInterval: i32,
     usePolling: bool,
@@ -13,7 +22,7 @@ pub struct Config {
 
 // Basic structure describing filesystem event information
 //
-#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Debug)]
+#[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]
 pub struct EventInfo {
     path: String,
     time: SystemTime,

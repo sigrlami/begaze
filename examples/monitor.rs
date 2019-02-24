@@ -1,4 +1,4 @@
-use begaze::{Watcher};
+use begaze::{WatchManager};
 use std::path::Path;
 
 fn main() {

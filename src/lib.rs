@@ -1,23 +1,28 @@
-use std::thread;
-use std::time;
+use std::io;
+
+mod types;
+use types::*;
 
 
-fn pub watchTree() {
-
-}
-
-fn pub watchDir() {
+pub fn watchTree() {
 
 }
 
-fn pub startManager() {
+pub fn watchDir() {
 
 }
 
-fn pub stopManager() {
+pub fn startManager() {
+
+}
+
+pub fn stopManager() {
 
 
 }
 
-
-extern crate self as begaze;
+//
+//
+pub fn withManager(mgr: WatchManager) -> () {
+    //
+}
