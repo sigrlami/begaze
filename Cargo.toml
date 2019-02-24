@@ -13,3 +13,11 @@ failure_derive = "0.1.2"
 humantime = "1.1.1"
 time = "0.1.40"
 serde_json = "1.0.32"
+
+[lib]
+name = "begaze"
+path = "src/lib.rs"
+
+[[bin]]
+name = "begaze-exe"
+path = "src/main.rs"
