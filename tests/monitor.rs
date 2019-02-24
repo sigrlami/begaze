@@ -1,12 +1,10 @@
 use begaze::{WatchManager};
 use std::path::Path;
 
-fn main() {
+#[test]
+fn test_watch() {
     let path = std::env::args()
         .nth(1)
         .expect("Argument 1 needs to be a path");
     println!("watching {}", path);
-    //if let Err(e) = watch(path) {
-    //    println!("error: {:?}", e)
-    //}
 }
