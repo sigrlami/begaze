@@ -1,7 +1,7 @@
 use std::io;
 
-mod types;
-use types::*;
+pub mod types;
+pub use types::*;
 
 
 pub fn watchTree() {
