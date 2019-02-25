@@ -36,8 +36,19 @@ fn main() {
           .nth(1)
           .expect("Argument 1 needs to be a path");
 
-    println!("watching \"{}\":", path);
+    println!("\n begaze | contents of \"{}\":", path);
 
     visit_dirs(Path::new(&path), &showEntry);
+
+    println!("\n begaze | enabling watch system..");
+
+    //initialize watch config
+    let config = WatchConfig { pollInterval: 20, ..Default::default() };
+    println!("\n begaze | with config \n   {:?}\n", config);
+
+    //initialize manager structure
+    //let manager =
+
+    //withManager
 
 }

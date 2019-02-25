@@ -14,10 +14,23 @@ pub struct WatchManager {
 //
 #[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]
 pub struct WatchConfig {
-    debounce: i32, // default, no debounce, <specific time>
-    pollInterval: i32,
-    usePolling: bool,
-    threadPerEvent: bool
+    pub debounce: i32, // default, no debounce, <specific time>
+    pub pollInterval: i32,
+    pub usePolling: bool,
+    pub threadPerEvent: bool
+}
+
+// initialize default structure for config
+//
+impl Default for WatchConfig {
+    fn default() -> WatchConfig {
+        WatchConfig {
+            debounce: 0,
+            pollInterval: 10,
+            usePolling: false,
+            threadPerEvent: false,
+        }
+    }
 }
 
 // Basic structure describing filesystem event information
