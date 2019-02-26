@@ -1,8 +1,9 @@
-
 use std::time::{SystemTime};
 
-//
+////////////////////////////////////////////////////////////////////////////////
 
+// Manager configuration to collectively listen
+// file changes with similar behaviour
 #[derive( PartialEq, Eq, PartialOrd, Ord, Debug)]
 pub struct WatchManager {
     pub config: WatchConfig,
@@ -13,7 +14,7 @@ pub struct WatchManager {
 // Standard config
 //
 #[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]
-pub struct WatchConfig {
+pub struct Config {
     pub debounce: i32, // default, no debounce, <specific time>
     pub pollInterval: i32,
     pub usePolling: bool,
@@ -22,9 +23,9 @@ pub struct WatchConfig {
 
 // initialize default structure for config
 //
-impl Default for WatchConfig {
-    fn default() -> WatchConfig {
-        WatchConfig {
+impl Default for Config {
+    fn default() -> Config {
+        Config {
             debounce: 0,
             pollInterval: 10,
             usePolling: false,
