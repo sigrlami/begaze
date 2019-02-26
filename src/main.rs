@@ -43,7 +43,7 @@ fn main() {
     println!("\n begaze | enabling watch system..");
 
     //initialize watch config
-    let config = WatchConfig { pollInterval: 20, ..Default::default() };
+    let config = Config { pollInterval: 20, ..Default::default() };
     println!("\n begaze | with config \n   {:?}\n", config);
 
     //initialize manager structure
